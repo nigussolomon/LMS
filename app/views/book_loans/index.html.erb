@@ -1,0 +1,41 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>book_loans</h1>
+
+<%= link_to "New book_loan", new_book_loan_path,class: "btn btn-primary" %>
+<br>
+<br>
+<br>
+<table class="table table-striped table-hover table-bordered border-success">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>ISBN</th>
+            <th>Publisher</th>
+            <th>Published Date</th>
+            <th>Category</th>
+            <th>Description</th>
+            <th>Copy</th>
+            <th>Status</th>
+            <th>OPTIONS</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @book_loans.each do |book_loan| %>
+        <tr>
+            <td><%= book_loan.book %></td>
+            <td><%= book_loan.user %></td>
+            <td><%= book_loan.loan_date %></td>
+            <td><%= book_loan.return_date %></td>
+            <td><%= book_loan.status %></td>
+            <td>
+            <%= link_to "Show", book_loan, class: "btn btn-primary" %>
+            &nbsp;
+            <%= link_to "Edit", edit_book_loan_path(book_loan), class: "btn btn-primary" %>
+            </td>
+        </tr>
+        <% end %>
+    </tbody>
+    </table>
+

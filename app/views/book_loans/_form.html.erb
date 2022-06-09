@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+        <%= form_with(model: book_loan) do |form| %>
+            <% if book_loan.errors.any? %>
+            <div style="color: red">
+                <h2><%= pluralize(book_loan.errors.count, "error") %> prohibited this book_loan from being saved:</h2>
+
+                <ul>
+                <% book_loan.errors.each do |error| %>
+                    <li><%= error.full_message %></li>
+                <% end %>
+                </ul>
+            </div>
+            <% end %>
+
+            <div>
+            <%= form.label :book, style: "display: block" %>
+            <%= form.text_field :book, class: "form-control" %>
+            </div>
+
+            <div>
+            <%= form.label :user, style: "display: block" %>
+            <%= form.text_field :user, class: "form-control" %>
+            </div>
+
+            <div>
+            <%= form.label :loan_date, style: "display: block" %>
+            <%= form.text_field :loan_date, class: "form-control" %>
+            </div>
+
+            <div>
+            <%= form.label :return_date, style: "display: block" %>
+            <%= form.text_field :return_date, class: "form-control" %>
+            </div>
+
+            <div>
+            <%= form.label :status, style: "display: block" %>
+            <%= form.text_field :status, class: "form-control" %>
+            </div>
+            
+            
+            <br>
+            <div>
+            <%= form.submit class: "btn btn-primary" %>
+            </div>
+        <% end %>
+        </div>
+    </div>
+</div>
