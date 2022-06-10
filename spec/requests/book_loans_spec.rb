@@ -2,9 +2,8 @@ require 'rails_helper'
 
 RSpec.describe "BookLoans", type: :request do
   let(:valid_attributes) do
-    @book = Book.all
     {
-      book:  @book[1],
+      book_id:  1,
       user:  Faker::Name.name ,
       loan_date:  Faker::Date.forward(days: 0) ,
       return_date:  Faker::Date.forward(days: 15) ,
@@ -14,7 +13,7 @@ RSpec.describe "BookLoans", type: :request do
 
   let(:invalid_attributes) do
     {
-      book:  nil,
+      book_id:  nil,
       user:  Faker::Name.name ,
       loan_date:  Faker::Date.forward(days: 0) ,
       return_date:  Faker::Date.forward(days: 15) ,

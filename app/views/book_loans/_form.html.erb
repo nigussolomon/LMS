@@ -16,7 +16,7 @@
 
             <div>
             <%= form.label :book, style: "display: block" %>
-            <%= form.text_field :book, class: "form-control" %>
+            <%= form.collection_select :book_id, Book.order(:id),:id, :title ,class: "form-control" %>
             </div>
 
             <div>

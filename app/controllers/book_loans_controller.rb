@@ -54,6 +54,6 @@ class BookLoansController < ApplicationController
     end
 
     def book_loan_params
-        params.require(:book_loan).permit(:book, :user, :loan_date, :return_date, :status)
+        params.require(:book_loan).permit(:book_id, :user, :loan_date, :return_date, :status)
     end
 end

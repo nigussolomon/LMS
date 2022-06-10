@@ -51,18 +51,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_09_232732) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "titles", force: :cascade do |t|
-    t.string "author", null: false
-    t.string "isbn", null: false
-    t.string "publisher", null: false
-    t.date "published_date", null: false
-    t.string "category", null: false
-    t.text "description"
-    t.integer "copy", null: false
-    t.string "status", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   add_foreign_key "book_loans", "books"
 end

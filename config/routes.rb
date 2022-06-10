@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :book_loans
   resources :book_requests
 
-  #root "books#index"
+  root "books#index"
   # Defines the root path route ("/")
   # root "articles#index"
 end
