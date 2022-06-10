@@ -42,7 +42,7 @@ class BookLoansController < ApplicationController
     def destroy
         @book_loan.destroy
         respond_to do |format|
-            format.html { redirect_to book_loans_url, "Loan was succesfully deleted" }
+            format.html { redirect_to book_loans_url, notice: "Loan was succesfully deleted" }
             format.json {head :no_content}
         end
     end
