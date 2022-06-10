@@ -1,0 +1,40 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>book_requests</h1>
+
+<%= link_to "New book_request", new_book_request_path,class: "btn btn-primary" %>
+<br>
+<br>
+<br>
+<table class="table table-striped table-hover table-bordered border-success">
+    <thead>
+        <tr>
+            <th>User</th>
+            <th>ISBN</th>
+            <th>Title</th>
+            <th>Publisher</th>
+            <th>published_date</th>
+            <th>Category</th>
+            <th>Status</th>
+            <th>OPTIONS</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @book_requests.each do |book_request| %>
+        <tr>
+            <td><%= book_request.user %></td>
+            <td><%= book_request.isbn %></td>
+            <td><%= book_request.title %></td>
+            <td><%= book_request.publisher %></td>
+            <td><%= book_request.published_date %></td>
+            <td><%= book_request.category %></td>
+            <td><%= book_request.status %></td>
+            <td>
+            <%= link_to "Show", book_request, class: "btn btn-primary" %>
+            &nbsp;
+            <%= link_to "Edit", edit_book_request_path(book_request), class: "btn btn-primary" %>
+            </td>
+        </tr>
+        <% end %>
+    </tbody>
+    </table>

@@ -1,0 +1,11 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @book_request %>
+
+<div>
+    <%= link_to "Edit this book_request", edit_book_request_path(@book_request), class: "btn btn-primary"%> 
+    <%= link_to "Back to book_requests", book_requests_path, class: "btn btn-primary" %>
+    <br>
+    <br>
+    <%= button_to "Destroy this book_request", @book_request, method: :delete  , class: "btn btn-primary"%>
+</div>
