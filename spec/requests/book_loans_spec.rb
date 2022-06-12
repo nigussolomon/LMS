@@ -2,8 +2,20 @@ require 'rails_helper'
 
 RSpec.describe "BookLoans", type: :request do
   let(:valid_attributes) do
+    Test_book = Book.create({
+      title:  Faker::Lorem.word,
+      author:  Faker::Name.name,
+      isbn:  Faker::Lorem.word,
+      publisher:  Faker::Name.name,
+      published_date:  Faker::Date.forward(days: 2),
+      category:  Faker::Lorem.word,
+      description:  Faker::Lorem.paragraph,
+      copy:  3,
+      status:  "AVAILABLE"
+    })
+
     {
-      book_id:  1,
+      book_id:  Test_book[:id],
       user:  Faker::Name.name ,
       loan_date:  Faker::Date.forward(days: 0) ,
       return_date:  Faker::Date.forward(days: 15) ,
